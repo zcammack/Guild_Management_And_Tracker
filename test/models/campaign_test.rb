@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OperationTest < ActiveSupport::TestCase
+class CampaignTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

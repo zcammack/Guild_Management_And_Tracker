@@ -1,2 +1,0 @@
-class OperationsController < ApplicationController
-end
