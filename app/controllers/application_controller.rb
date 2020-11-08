@@ -4,17 +4,4 @@ class ApplicationController < ActionController::Base
     def welcome
 
     end
-
-    def members
-        @users = User.all
-    end
-
-    def finished_campaigns
-        @user = current_user
-    end
-
-    def after_sign_in_path_for(resource)
-        @user = current_user
-
-    end
 end

@@ -18,22 +18,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="/campaigns">Campaigns</a>
+             <li><%= link_to 'Campaigns', campaigns_path, :class => 'nav-link text-white' %>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="/campaigns/new">New Campaign</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="/users/edit">My Account</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white" href="/users/sign_out">Log Out</a>
+            <li><%= link_to 'Dungeon Masters', admin_session_path, :class => 'nav-link text-white' %>
             </li>
           </ul>
           <p class="navbar-text float-right">
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'New Campaign',
+            new_campaign_path, :class => 
+            'navbar-link' %> |
+            <%= link_to 'New Character',
+            new_character_path, :class => 
+            'navbar-link' %> |
             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
