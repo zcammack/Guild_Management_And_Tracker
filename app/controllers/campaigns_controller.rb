@@ -28,6 +28,17 @@ class CampaignsController < ApplicationController
         end
     end
 
+    def update
+        @campaign.update(campaign_params)
+        redirect_to campaign_characters_path(@campaign)
+    end
+
+    def destroy
+        @campaign.destroy
+        flash[:notice] = "Successfully deleted Campaign."
+        redirect_to campaigns_path
+    end
+
     private
 
     def campaign_params
