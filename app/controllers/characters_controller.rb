@@ -11,11 +11,24 @@ class CharactersController < ApplicationController
         end
     end
 
-    
+    def new
+        if @campaign.users.first == current_user
+            set_campaign
+            @character = @campaign.characters.build
+        else
+            flash[:alert] = "You do not have authorization to view this page."
+             redirect_to campaigns_path
+        end
+    end 
 
-
-
-
+    def create
+        @character = current_user.characters.build(character_params)
+        if @character.save
+            redirect_to campaign_characters_path(@campaign)
+        else
+            redirect_to campaign_path, notice: 'Character was not added!'
+        end
+    end 
 
     private
 
