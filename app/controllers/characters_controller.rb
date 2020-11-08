@@ -1,7 +1,17 @@
 class CharactersController < ApplicationController
     before_action :set_campaign, only: [:index, :new, :create, :show]
 
+    def index
+        if @campaign.users.first == current_user
+            set_campaign
+            @characters = @campaign.characters.sort_by {|character| character.name}
+        else
+            flash[:alert] = "You do not have authorization to view this page."
+            redirect_to campaign_path
+        end
+    end
 
+    
 
 
 
