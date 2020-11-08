@@ -30,6 +30,16 @@ class CharactersController < ApplicationController
         end
     end 
 
+    def show
+        @character = character.find_by(id:params[:id])
+        if @character.user != current_user
+            flash[:alert] = "You do not have authorization to view this page."
+            redirect_to campaign_path
+        else
+            set_campaign
+        end
+    end 
+
     private
 
     def character_params
