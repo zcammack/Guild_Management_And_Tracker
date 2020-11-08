@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GuildManagementAndTracker</title>
+    <title>The Midnight Covenant Dungeons and Dragons Planner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -12,17 +12,23 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="/">The Midnight Covenant Dungeons and Dragons Planner</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <a class="navbar-brand text-white" href="/">The Midnight Covenant Dungeons and Dragons Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="/campaigns">Campaigns</a>
+              <a class="nav-link text-white" href="/campaigns">Campaigns</a>
             </li>
-            <li class="nav-item">
-              <%= link_to 'New Campaign', new_campaign_path, class: "nav-link" %>
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="/campaigns/new">New Campaign</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="/users/edit">My Account</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="/users/sign_out">Log Out</a>
             </li>
           </ul>
           <p class="navbar-text float-right">
@@ -56,7 +62,7 @@
   </body>
     <footer>
     <div class="container">
-      TMC <%= Time.now.year %>
+      TMC <%= Time.now.year %> 'The Ends Justify The Means'
     </div>
   </footer>
 </html>
