@@ -1,24 +1,8 @@
-# README
+This program will allow you to create and manage parties of characters between campaigns for a Dungeons and Dragons setting. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To use it, simply clone down the program and the rails server with 'rails s'.
 
-Things you may want to cover:
+Navigate to localhost:3000 and then follow the instructions to sign up and begin creating.
 
-* Ruby version
+Flatiron School Rails Portfolio Project by Zackary Cammack
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
